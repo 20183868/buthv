@@ -1,0 +1,50 @@
+import re
+
+
+class HandlingData()
+    def_init_(self,file_input,file_output):
+    self.file_input=file_input
+    self.file_output=file_output
+    self.data=[]
+    self.key_word=[]
+"khoi tao phuong thuc mac dinh "
+
+    def ReadData(self):
+        file_input=open(self.file_input,r)
+        for input in file_input:
+            self.data.append(input)
+            file_input.close()
+        return self.data
+
+
+    def GetKeyword(self)
+         words=re.split('\s',data)
+        test1= r''\b(0?[1-9]|[12]\d|3[01])[\/\-.](0?[1-9]|[12]\d|3[01])[\/\-.](\d{2}|\d{4})\b
+        test2=r''\d{1},
+        test3=\W
+        test4=tang\b
+        test5=giam\b
+"chon ra mot so tu khoa muon tim"
+        for word in words
+             for i in 4
+             kw[i] = re.search(test[i], word)
+             self.key_word.append(kw[i])
+        return self.key_word
+
+    def WriteData(self)
+        inputs=self.ReadData
+        keywords=self.GetKeyword
+        file_output=open(self.file_output,r)
+        output=[]
+        for input in inputs
+            for keyword in keywords
+                match=re.match(r'keyword',input)
+                if match:
+                    output.append(input)
+        file_output.write(''.join(output))
+        file_output.close()
+
+if __name__ == '__main__':
+result = HandlingData('Vnexpress.CLASSIFIED.VNINDEX.txt', 'output.txt')
+result.WriteData()
+result.slose()
